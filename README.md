@@ -21,7 +21,6 @@ View the live demo or follow the instructions below to run the project locally:
 
 - Node.js
 - npm
-- Yarn
 
 ### Steps to Run Locally
 
