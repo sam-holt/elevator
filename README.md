@@ -3,7 +3,7 @@
 
 ## About
 
-A 3D Elevator Simulation made using JavaScript, Three.js, React-three-fiber, Blender, HTML, and CSS. View the live demo here!
+A 3D Elevator Simulation made using JavaScript, Three.js, React-three-fiber, Blender, HTML, and CSS. View the live demo [here](https://threedkit-f69afd8478fc.herokuapp.com/)!
 
 ## Index
 
@@ -15,7 +15,7 @@ A 3D Elevator Simulation made using JavaScript, Three.js, React-three-fiber, Ble
 
 ## Setup
 
-View the live demo or follow the instructions below to run the project locally:
+View the [live demo](https://threedkit-f69afd8478fc.herokuapp.com/) or follow the instructions below to run the project locally:
 
 ### Prerequisites
 
