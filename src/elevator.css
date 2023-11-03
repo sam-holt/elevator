@@ -1,0 +1,76 @@
+/* styling for the elevator buttons */
+.elevator-button {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #e2e2e2;
+  text-align: center;
+  line-height: 50px; 
+  font-weight: bold;
+  margin: 5px;
+  user-select: none;
+  cursor: pointer; 
+  border: 1px solid gray;
+}
+  
+/* highlight buttons if they are a targeted destination*/
+.elevator-button.active {
+  background-color: yellow;
+}
+
+/* highlights hovered buttons*/
+.elevator-button:hover {
+    background-color: white;
+}
+
+/* styling for the elevator buttons container */
+.button-container {
+    background-color: silver;
+    border: 1px solid gray;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 60px);
+    justify-content: center;
+    align-items: center; 
+    padding: 10px; 
+}
+
+/* fade out if occluded */
+.occluded {
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+/* styling for the elevator stats container */
+.stats-container {
+  background-color: silver; 
+  padding: 10px;
+  border-radius: 5px; 
+  display: inline-block; 
+  margin: 10px; 
+  border: 1px solid gray;
+}
+
+/* styling for the elevator reset button */
+.reset-button {
+  background-color: #f2f2f2; 
+  padding: 5px 10px;
+  border-radius: 5px; 
+  display: inline-block; 
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+/* highlights hovered button*/
+.reset-button:hover {
+  background-color: white;
+}
+
+/* styling for the title text */
+.title{
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: white;
+}
