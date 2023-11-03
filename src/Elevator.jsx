@@ -106,7 +106,7 @@ export const Elevator = () => {
         <div className='stats-container'>
           <div>
             {/* input box for changing the speed */}
-            <label htmlFor="travelTime">Travel Time (Floor/Sec): </label>
+            <label htmlFor="travelTime">Travel Speed (Sec/Floor): </label>
             <input id="travelTime" type="number" value={travelTime} onChange={(e) => setTravelTime(Number(e.target.value))} />
           </div>
           <div>
