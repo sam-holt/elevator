@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@babel/core": "^7.23.2",
     "@react-three/drei": "9.88.1",
     "@react-three/fiber": "8.15.9",
     "@types/three": "0.158",
