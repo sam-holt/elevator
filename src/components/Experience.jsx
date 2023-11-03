@@ -9,7 +9,7 @@ export const Experience = () => {
   const elevatorRef = useRef()
   const doorLeftRef = useRef()
   const doorRightRef = useRef()
-  const floorDistance = 1.1
+  const floorDistance = 2.2
   const numFloors = 6
   const [travelTime, setTravelTime] = useState(2)
   const [destinationFloors, setDestinationFloors] = useState([])
@@ -33,16 +33,21 @@ export const Experience = () => {
 
   useLayoutEffect(() => {
     elevator.scene.traverse((child) => {
+      if(child.isMesh) {
+        child.castShadow = true
+        child.receiveShadow = true
+      }
       if (child.name === 'Elevator') {
-        child.material = new THREE.MeshBasicMaterial({ color: 'silver'})
+        elevatorRef.current = child
       }
       if (child.name === 'Door_Right') {
-        child.material = new THREE.MeshBasicMaterial({ color: 'gray' })
         doorRightRef.current = child
+        doorRightRef.current.material = new THREE.MeshStandardMaterial({color:'silver'})
       }
       if (child.name === 'Door_Left') {
-        child.material = new THREE.MeshBasicMaterial({ color: 'gray' })
         doorLeftRef.current = child
+        doorLeftRef.current.material = new THREE.MeshStandardMaterial({color:'silver'})
+
       }
 
     })
@@ -100,21 +105,28 @@ export const Experience = () => {
         ))}
       </Html>
 
-      <OrbitControls enablePan={false}/>
-      {/* <PresentationControls global cursor snap polar={[0, Math.PI / 4]} > */}
-        <group rotation={[ 0, - Math.PI/4, 0 ]}>
-          
+      <ambientLight intensity={0.5} />
+      <directionalLight
+        position={[5, 7, 5]}
+        intensity={1}
+        castShadow
+        shadow-mapSize-width={2048}
+        shadow-mapSize-height={2048}
+        shadow-camera-near={0.01}
+        shadow-camera-far={20}
+        shadow-camera-left={-10}
+        shadow-camera-right={10}
+        shadow-camera-top={10}
+        shadow-camera-bottom={-10}
+        shadow-bias={-0.001}
+      />
 
-          <group ref={elevatorRef}>
+      {/* <OrbitControls enablePan={false}/> */}
+      <PresentationControls global cursor snap polar={[0, Math.PI / 4]} >
+        <group rotation={[ 0, Math.PI/4, 0 ]} position={[ 0, -2.2, 0 ]}>
             <primitive object={elevator.scene} position={[ 0, 0, 0]} scale={0.5}/>
-          </group>
-
-          <mesh rotation={[ -Math.PI/2, 0, 0 ]} position={[ 0, 0, 0 ]}>
-            <planeGeometry args={[10, 10]} />
-            <meshBasicMaterial color='gray' />
-          </mesh>
         </group>
-      {/* </PresentationControls> */}
+      </PresentationControls>
   </>
 
   //Function that creates a list of floors to visit 
@@ -162,6 +174,14 @@ export const Experience = () => {
           setVisitedFloors(prevFloors => [...prevFloors, destinationFloors[0]])
           openAndCloseDoors()
       }
+    })
+    gsap.to(doorLeftRef.current.position, {
+      y: (destinationFloors[0] - 1) * floorDistance,
+      duration: travelTime * Math.abs(destinationFloors[0] - currentFloor),
+    })
+    gsap.to(doorRightRef.current.position, {
+      y: (destinationFloors[0] - 1) * floorDistance,
+      duration: travelTime * Math.abs(destinationFloors[0] - currentFloor),
     })
   }
 
