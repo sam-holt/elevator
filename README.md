@@ -1,5 +1,5 @@
 # Elevator Simulation
-![elevatorSimulation](https://github.com/sam-holt/elevator/assets/67719990/e3858276-0230-417f-8541-8fb7d51875dd)
+![elevatorSimulation](https://github.com/sam-holt/elevator/assets/67719990/030d87c1-25ec-4a36-9554-8aaff5221586)
 
 ## About
 
