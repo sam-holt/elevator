@@ -31,8 +31,8 @@ View the live demo or follow the instructions below to run the project locally:
   ```
 - navigate to the newly created directory and run:
    ```
-  yarn
-  yarn dev
+  npm install
+  npm run dev
   ```
 - follow the provided localhost link to run the experience locally in your browser
 
