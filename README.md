@@ -26,7 +26,7 @@ View the [live demo](https://threedkit-f69afd8478fc.herokuapp.com/) or follow th
 
 - Once Node.js, npm, and Yarn have been installed use a terminal to navigate to your desired directory and clone the repository using:
   ```
-  git clone 
+  git clone https://github.com/sam-holt/elevator.git
   ```
 - navigate to the newly created directory and run:
    ```
