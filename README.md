@@ -24,7 +24,7 @@ View the [live demo](https://threedkit-f69afd8478fc.herokuapp.com/) or follow th
 
 ### Steps to Run Locally
 
-- Once Node.js, npm, and Yarn have been installed use a terminal to navigate to your desired directory and clone the repository using:
+- Once Node.js and npm have been installed use a terminal to navigate to your desired directory and clone the repository using:
   ```
   git clone https://github.com/sam-holt/elevator.git
   ```
@@ -33,7 +33,7 @@ View the [live demo](https://threedkit-f69afd8478fc.herokuapp.com/) or follow th
   npm install
   npm run dev
   ```
-- follow the provided localhost link to run the experience locally in your browser
+- follow the provided localhost link to run the experience in your browser
 
 ## Features
 
@@ -49,11 +49,11 @@ View the [live demo](https://threedkit-f69afd8478fc.herokuapp.com/) or follow th
 
 ## Missing Features and Areas for Improvement
 
-- Responsitivity (both for the UI and 3D elements such as the camera) is very minimal and could be improved for mobile devices
-- Browser and device compatibility has not been extensively tested
-- As it stands, the current floor indicates the most recently visited floor. This can be improved to update the current floor based on the elevators current position
+- The logic for "current floor" could be improved to update during travel as it currently indictes the most recently visited floor. This prevents the starting floor from being selected until another floor is visited.
 - The current UI is very simplistic and could be improved greatly
 - Although the number of floors that the elevator can visit is flexible the 3D model is not dynamic and will not reflect these changes
+- Responsitivity (both for the UI and 3D elements such as the camera) is very minimal and could be improved for mobile devices
+- Browser and device compatibility has not been extensively tested
 
 ## Sources
 
